@@ -8,11 +8,11 @@ int main(void) { // prototype
     int height;
 
     do {
-        int height = get_int("Height: ");
-    } while (height < 1 || height >= 8);
+        height = get_int("Height: ");
+    } while (height < 1 || height > 8);
 
     if (height == 1) {
-        printf("# #\n");
+        printf("#  #\n");
     }
     else {
         printPyramid(height);
@@ -27,19 +27,16 @@ void printPyramid(int height) { // function that holds the role of build the pyr
             printf(" ");
         }
 
-        for (int k = 0; k < i; k++) {
+        for (int k = 0; k <= i; k++) {
             printf("#");
         }
 
-        printf(" ");
+        printf("  ");
 
-        for (int l = 0; l < i; l++) {
+        for (int l = 0; l <= i; l++) {
             printf("#");
         }
 
-        for (int m = height; m > i; m--) {
-            printf(" ");
-        }
         printf("\n"); //! cat's jump (that makes more sense in portuguese)
     }
 }
